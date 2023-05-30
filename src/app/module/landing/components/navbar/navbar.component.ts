@@ -8,7 +8,8 @@ import { Component, HostListener } from '@angular/core';
 export class NavbarComponent {
   showModal: boolean = false;
   intransition: boolean = false;
-
+  booking: string = 'Anywhere';
+  guest: number = 1;
   @HostListener('window:scroll', []) onWindowScroll() {
     const verticalOffset =
       window.scrollY ||
@@ -34,5 +35,21 @@ export class NavbarComponent {
     this.showModal = false;
     setTimeout(() => (this.intransition = false), 500);
     document.body.style.overflowY = 'auto';
+  }
+
+  selectBooking(bookingText: string) {
+    this.booking = bookingText;
+  }
+
+  addGuest(type: string) {
+    if (this.guest <= 0 && type == 'minus') {
+      return;
+    }
+    if (type == 'add') {
+      this.guest += 1;
+    }
+    if (type == 'minus') {
+      this.guest -= 1;
+    }
   }
 }

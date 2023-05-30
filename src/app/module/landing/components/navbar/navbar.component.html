@@ -86,15 +86,41 @@
 
   <div class="filters-nav">
     <div
-      style="background-color: #f3f3f2; padding: 10px"
-      class="filter-1 m-1 d-flex rounded align-items-center"
+      class="booking__select dropdown"
+      data-bs-toggle="dropdown"
+      data-display="static"
+      style="margin-top: 4px; cursor: pointer"
     >
-      <p class="m-0 flex-fill">Anywhere</p>
-      <img src="assets/arrow-down.svg" alt="arrow-down" height="20" />
+      <p class="font-14 m-0">{{ booking }}</p>
+      <svg
+        stroke="currentColor"
+        fill="none"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        class="ms-auto cursor-pointer"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+        ></path>
+      </svg>
+      <div class="dropdown-menu w-100 menu-any">
+        <a class="dropdown-item" (click)="selectBooking('Anywhere')"
+          >Anywhere</a
+        >
+        <a class="dropdown-item" (click)="selectBooking('One')">One</a>
+        <a class="dropdown-item" (click)="selectBooking('Two')">Two</a>
+        <a class="dropdown-item" (click)="selectBooking('Three')">Three</a>
+      </div>
     </div>
     <div
-      style="background-color: #f3f3f2; padding: 10px"
-      class="filter-2 m-1 d-flex rounded align-items-center"
+      style="background-color: #f3f3f2; padding: 10px; border-radius: 12px"
+      class="filter-2 m-1 d-flex align-items-center"
     >
       <img src="assets/calender.svg" alt="calender" height="20" width="20" />
       <p class="m-0 ps-2">June 14 - 21</p>
@@ -107,31 +133,36 @@
           padding-right: 10px;
           padding-top: 7px;
           padding-bottom: 7px;
+          border-radius: 12px;
         "
-        class="filter-3 m-1 d-flex rounded justify-content-between"
+        class="filter-3 m-1 d-flex justify-content-between"
       >
         <div
+          (click)="addGuest('minus')"
           style="
             background-color: white;
             padding-left: 6px;
             padding-right: 6px;
             padding-top: 3px;
             padding-bottom: 3px;
+            cursor: pointer;
           "
           class="rounded"
         >
           <img style="margin-bottom: 4px" src="assets/minus.svg" alt="minus" />
         </div>
         <div>
-          <p class="m-0">4 guests</p>
+          <p class="m-0" style="padding-top: 2px">{{ guest }} guests</p>
         </div>
         <div
+          (click)="addGuest('add')"
           style="
             background-color: white;
             padding-left: 6px;
             padding-right: 6px;
             padding-top: 3px;
             padding-bottom: 3px;
+            cursor: pointer;
           "
           class="rounded"
         >
