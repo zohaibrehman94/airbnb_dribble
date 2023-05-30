@@ -11,9 +11,9 @@ export class ListingComponent {
   selectedCard: any = {};
   cards: any = [
     {
-      picture1: '../../../assets/images/card-pic1.jpg',
-      picture2: '../../../assets/images/card-pic2.jpg',
-      picture3: '../../../assets/images/card-pic3.jpg',
+      picture1: 'assets/images/card-pic1.jpg',
+      picture2: 'assets/images/card-pic2.jpg',
+      picture3: 'assets/images/card-pic3.jpg',
       title: 'Whitefish Estate',
       description: 'Whitefish,Montana,United States',
       rating: '5.0',

@@ -9,71 +9,71 @@ export class SidebarComponent {
   pages: any = [
     {
       name: 'All Homes',
-      icon: '../../../../../assets/logo.svg',
+      icon: 'assets/logo.svg',
     },
     {
       name: 'Amazing Views',
-      icon: '../../../../../assets/views.svg',
+      icon: 'assets/views.svg',
     },
     {
       name: 'Tiny Homes',
-      icon: '../../../../../assets/tiny-homes.svg',
+      icon: 'assets/tiny-homes.svg',
     },
     {
       name: "Chef's Kitchen",
-      icon: '../../../../../assets/chef.svg',
+      icon: 'assets/chef.svg',
     },
     {
       name: 'Surfing',
-      icon: '../../../../../assets/surfiing.svg',
+      icon: 'assets/surfiing.svg',
     },
     {
       name: 'Mansions',
-      icon: '../../../../../assets/mansion.svg',
+      icon: 'assets/mansion.svg',
     },
     {
       name: 'Luxe',
-      icon: '../../../../../assets/luxe.svg',
+      icon: 'assets/luxe.svg',
     },
     {
       name: 'Treehouses',
-      icon: '../../../../../assets/tree.svg',
+      icon: 'assets/tree.svg',
     },
     {
       name: 'Camping',
-      icon: '../../../../../assets/camping.svg',
+      icon: 'assets/camping.svg',
     },
     {
       name: 'Beachfront',
-      icon: '../../../../../assets/beach.svg',
+      icon: 'assets/beach.svg',
     },
     {
       name: 'Farms',
-      icon: '../../../../../assets/farm.svg',
+      icon: 'assets/farm.svg',
     },
     {
       name: 'Castles',
-      icon: '../../../../../assets/castle.svg',
+      icon: 'assets/castle.svg',
     },
     {
       name: 'Islands',
-      icon: '../../../../../assets/island.svg',
+      icon: 'assets/island.svg',
     },
     {
       name: 'Vineyards',
-      icon: '../../../../../assets/vineyard.svg',
+      icon: 'assets/vineyard.svg',
     },
     {
       name: 'Amazing Pools',
-      icon: '../../../../../assets/pool.svg',
+      icon: 'assets/pool.svg',
     },
     {
       name: 'Skiing',
-      icon: '../../../../../assets/skiing.svg',
+      icon: 'assets/skiing.svg',
     },
     {
       name: 'Desert',
-      icon: '../../../../../assets/desert.svg',
+      icon: 'assets/desert.svg',
     },
   ];
 }
