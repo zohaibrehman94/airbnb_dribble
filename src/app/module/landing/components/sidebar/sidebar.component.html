@@ -1,0 +1,19 @@
+<div id="sidebar">
+  <ul class="nav">
+    <span class="w-100" *ngFor="let item of pages; let i = index">
+      <li
+        [ngClass]="{ 'nav-link-active': i === 0 }"
+        class="nav-item nav-link pb-2"
+      >
+        <a class="nav-links">
+          <span class="left-icon">
+            <img [src]="item.icon" alt="" />
+          </span>
+          <span class="content text-nowrap">
+            {{ item.name }}
+          </span>
+        </a>
+      </li>
+    </span>
+  </ul>
+</div>

@@ -1,0 +1,371 @@
+<nav class="animate__animated navbar navbar-expand-lg bg-white border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="../../../../../assets/images/mlogo.png"
+        width="145"
+        height="50"
+        alt="logo"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li>
+          <a class="navbar-toggler navbar-brand p-0" style="border: none">
+            <img
+              class="rounded-circle"
+              src="../../../../../assets/avatar.png"
+              height="50"
+              alt="logo"
+            />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page">Stays</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Experiences</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Online Experiences</a>
+        </li>
+      </ul>
+    </div>
+
+    <a
+      class="collapse navbar-collapse navbar-brand"
+      style="position: absolute; right: 0"
+    >
+      <img
+        class="rounded-circle"
+        src="../../../../../assets/avatar.png"
+        height="50"
+        alt="logo"
+      />
+    </a>
+  </div>
+</nav>
+
+<div
+  id="secondaryNav"
+  class="navbar d-flex w-100 px-4 py-2 bg-white border-bottom"
+  style="z-index: 1"
+>
+  <div style="background-color: #f3f3f2" class="d-flex flex-row rounded">
+    <div
+      style="
+        background-color: black;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 12px;
+        padding-top: 10px;
+      "
+      class="rounded"
+    >
+      <img
+        src="../../../../../assets/gird.svg"
+        height="22"
+        width="22"
+        alt="gird"
+      />
+    </div>
+    <div
+      style="
+        background-color: #f3f3f2;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 12px;
+        padding-top: 10px;
+      "
+      class="rounded"
+    >
+      <img
+        src="../../../../../assets/maps.svg"
+        height="22"
+        width="22"
+        alt="map"
+      />
+    </div>
+  </div>
+
+  <div class="filters-nav">
+    <div
+      style="background-color: #f3f3f2; padding: 10px"
+      class="filter-1 m-1 d-flex rounded align-items-center"
+    >
+      <p class="m-0 flex-fill">Anywhere</p>
+      <img
+        src="../../../../../assets/arrow-down.svg"
+        alt="arrow-down"
+        height="20"
+      />
+    </div>
+    <div
+      style="background-color: #f3f3f2; padding: 10px"
+      class="filter-2 m-1 d-flex rounded align-items-center"
+    >
+      <img
+        src="../../../../../assets/calender.svg"
+        alt="calender"
+        height="20"
+        width="20"
+      />
+      <p class="m-0 ps-2">June 14 - 21</p>
+    </div>
+    <div>
+      <div
+        style="
+          background-color: #f3f3f2;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-top: 7px;
+          padding-bottom: 7px;
+        "
+        class="filter-3 m-1 d-flex rounded justify-content-between"
+      >
+        <div
+          style="
+            background-color: white;
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+          "
+          class="rounded"
+        >
+          <img
+            style="margin-bottom: 4px"
+            src="../../../../../assets/minus.svg"
+            alt="minus"
+          />
+        </div>
+        <div>
+          <p class="m-0">4 guests</p>
+        </div>
+        <div
+          style="
+            background-color: white;
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+          "
+          class="rounded"
+        >
+          <img
+            style="margin-bottom: 4px"
+            src="../../../../../assets/plus.svg"
+            alt="plus"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="btn rounded shadow-none"
+    style="
+      background-color: #f3f3f2;
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-bottom: 12px;
+      padding-top: 10px;
+    "
+    (click)="openModal()"
+  >
+    <img src="../../../../../assets/filter.svg" alt="" />
+  </button>
+</div>
+
+<div id="overlay" *ngIf="showModal || intransition" (click)="closeModal()">
+  <div
+    (click)="$event.stopPropagation()"
+    class="bridge-modal shadow-lg animate__animated"
+    id="modal"
+    [class.animate__slideInRight]="showModal"
+    [class.animate__slideOutRight]="!showModal"
+  >
+    <div class="w-100 h-100" style="overflow-y: scroll; padding-bottom: 75px">
+      <div class="header d-flex justify-content-between pb-4 border-bottom">
+        <p class="m-0" style="font-size: 18px; font-weight: 600">Filters</p>
+        <p class="m-0" style="font-size: 14px; color: #ff385c">Clear All</p>
+      </div>
+
+      <div class="py-4 border-bottom">
+        <div class="price">
+          <p class="m-0" style="font-size: 18px; font-weight: 600">
+            Price Range
+          </p>
+          <p style="font-size: 14px; color: gray">
+            The average nightly price is $133
+          </p>
+
+          <div class="price_input d-flex flex-row justify-content-between">
+            <div class="w-100 pe-2">
+              <div class="label" style="font-size: 12px; color: gray">
+                Min Price
+              </div>
+              <div class="input p-2 border rounded w-100">
+                <p class="m-0 p-0">$0</p>
+              </div>
+            </div>
+            <div class="ps-1 w-100">
+              <div class="label" style="font-size: 12px; color: gray">
+                Max Price
+              </div>
+              <div class="input p-2 border rounded w-100">
+                <p class="m-0 p-0">$500+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="types py-4 border-bottom">
+        <p class="m-0" style="font-size: 18px; font-weight: 600">
+          Type of place
+        </p>
+        <div class="checkbox-list pt-4">
+          <div class="d-flex">
+            <div
+              class="rounded mb-auto me-2 mt-1"
+              style="padding: 10px; border: 1px solid grey"
+            ></div>
+            <div>
+              <p class="m-0" style="font-size: 16px; font-weight: 500">
+                Entire Place
+              </p>
+              <p class="m-0" style="font-size: 14px; color: gray">
+                A place all to yourself.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex pt-4">
+            <div
+              class="rounded mb-auto me-2 mt-1"
+              style="padding: 10px; border: 1px solid grey"
+            ></div>
+            <div>
+              <p class="m-0" style="font-size: 16px; font-weight: 500">
+                Private room
+              </p>
+              <p class="m-0" style="font-size: 14px; color: gray">
+                Your own room in a home, hotel, plus some shared common spaces.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex pt-4">
+            <div
+              class="rounded mb-auto me-2 mt-1"
+              style="padding: 10px; border: 1px solid grey"
+            ></div>
+            <div>
+              <p class="m-0" style="font-size: 16px; font-weight: 500">
+                Shared room
+              </p>
+              <p class="m-0" style="font-size: 14px; color: gray">
+                A sleeping space and common areas that may be shared with
+                others.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="numbers py-4">
+        <p class="m-0" style="font-size: 18px; font-weight: 600">
+          Rooms,beds and baths
+        </p>
+        <div>
+          <p class="pt-4">Bedrooms</p>
+          <div class="d-flex justify-content-between">
+            <div class="bg-dark rounded-pill me-1">
+              <p class="m-0 text-white px-3 py-2">Any</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">1</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">2</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">3</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">4</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-3 py-2">5+</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="pt-4">Beds</p>
+          <div class="d-flex justify-content-between">
+            <div class="bg-dark rounded-pill me-1">
+              <p class="m-0 text-white px-3 py-2">Any</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">1</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">2</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">3</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">4</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-3 py-2">5+</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="pt-4">Bathrooms</p>
+          <div class="d-flex justify-content-between">
+            <div class="bg-dark rounded-pill me-1">
+              <p class="m-0 text-white px-3 py-2">Any</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">1</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">2</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">3</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-4 py-2">4</p>
+            </div>
+            <div class="bg-white border rounded-pill me-1">
+              <p class="m-0 px-3 py-2">5+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer bg-white pt-4 border-top">
+      <button
+        class="btn w-100 my-auto mx-2 rounded px-2 py-3 text-center text-white disabled"
+        style="background-color: #ff385c"
+        disabled
+      >
+        Show 836 home
+      </button>
+    </div>
+  </div>
+</div>
